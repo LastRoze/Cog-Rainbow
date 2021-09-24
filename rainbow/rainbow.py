@@ -11,7 +11,6 @@ class rainbow:
     def __init__(self, bot):
         self.bot = bot
 
-    @checks.admin_or_permissions(manage_roles=True)
     @commands.command(administrator=True)
     async def arainbow(self, ctx, interval:float, *, role):
         roleObj = discord.utils.find(lambda r: r.name == role, ctx.message.guild.roles)
@@ -27,7 +26,6 @@ class rainbow:
             await self.bot.edit_role(ctx.message.guild, roleObj, colour=discord.Colour(value=colour))
             await asyncio.sleep(interval)
 
-    @checks.admin_or_permissions(manage_roles=True)
     @commands.command(administrator=True)
     async def rainbow(self, ctx, *, role: discord.Role):
 
