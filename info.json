@@ -1,12 +1,9 @@
 {
-    "author" : ["Last Roze"],
-    "install_msg" : "Thank you for installing Rainbow!",
-    "name" : "Rainbow Role",
-    "short" : "Rainbow",
-    "description" : "Make your role name colorful!",
-    "permissions" : ["Manage Messages", "Embed Links"],
-    "tags" : ["Fun"],
-    "min_python_version": [3, 8, 1],
-    "min_bot_version": "3.2.0",
-    "end_user_data_statement": "This cog need Admin permission!"
+    "author" : ["Last Roze (Last Roze#7259)"],
+    "install_msg" : "Thank you for installing my repo.\nFor issues, bugs, or suggestions contact me in the discord support server here: https://discord.io/Dominea\nFor more information on my cogs go to my github here: <https://github.com/LastRoze/DNA-Cogs>",
+    "name" : "DNA Cogs",
+    "short" : "Red Discord BOT Plugin",
+    "requirements" : ["tabulate"],
+    "description" : "You Know I Know How",
+    "tags" : ["Games", "Economy", "Fun"]
 }
