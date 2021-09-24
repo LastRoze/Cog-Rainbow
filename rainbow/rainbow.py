@@ -4,11 +4,13 @@ import asyncio
 from redbot.core import checks, commands
 from random import choice, randint
 
-class rainbow:
+class rainbow(commands.Cog):
+    
+
     def __init__(self, bot):
         self.bot = bot
-
-	@checks.admin_or_permissions(manage_roles=True)
+    
+    @checks.admin_or_permissions(manage_roles=True)
     @commands.command(administrator=True)
     async def arainbow(self, ctx, interval:float, *, role):
         roleObj = discord.utils.find(lambda r: r.name == role, ctx.message.server.roles)
@@ -21,15 +23,15 @@ class rainbow:
         while True:
             colour = ''.join([choice('0123456789ABCDEF') for x in range(6)])
             colour = int(colour, 16)
-            await self.bot.edit_role(ctx.message.server, roleObj, colour=discord.Colour(value=colour))
+            await self.bot.role.edit(ctx.message.server, roleObj, colour=discord.Colour(value=colour))
             await asyncio.sleep(interval)
 
-	@checks.admin_or_permissions(manage_roles=True)
+    @checks.admin_or_permissions(manage_roles=True)
     @commands.command(administrator=True)
     async def rainbow(self, ctx, *, role: discord.Role):
 
         while True:
             colour = ''.join([choice('0123456789ABCDEF') for x in range(6)])
             colour = int(colour, 16)
-            await self.bot.edit_role(ctx.message.server, role, colour=discord.Colour(value=colour))
+            await self.bot.role.edit(ctx.message.server, role, colour=discord.Colour(value=colour))
             await asyncio.sleep(0.0)
