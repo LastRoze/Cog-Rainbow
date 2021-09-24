@@ -6,9 +6,9 @@ import cogs.utils
 import asyncio
 from cogs.utils import checks
 
-__author__ = "MasterKnight"
+__author__ = "Last Roze"
 class rainbow:
-    """Rainbows the selected role"""
+    """Make your role colorful!"""
 
     def __init__(self, bot):
         self.bot = bot
