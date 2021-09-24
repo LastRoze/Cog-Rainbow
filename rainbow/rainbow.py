@@ -36,7 +36,3 @@ class rainbow:
             colour = int(colour, 16)
             await self.bot.edit_role(ctx.message.guild, role, colour=discord.Colour(value=colour))
             await asyncio.sleep(0.0)
-
-def setup(bot):
-    n = rainbow(bot)
-    bot.add_cog(n)
