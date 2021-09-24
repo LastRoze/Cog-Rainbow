@@ -12,9 +12,9 @@ class rainbow:
         self.bot = bot
 
     @checks.admin_or_permissions(manage_roles=True)
-    @commands.command(pass_context = True, no_pm=True)
+    @commands.command(administrator=True)
     async def arainbow(self, ctx, interval:float, *, role):
-        roleObj = discord.utils.find(lambda r: r.name == role, ctx.message.server.roles)
+        roleObj = discord.utils.find(lambda r: r.name == role, ctx.message.guild.roles)
         if not roleObj:
             no = discord.Embed(title="{} is not a valid role".format(role))
             await self.bot.say(embed=no)
@@ -24,17 +24,17 @@ class rainbow:
         while True:
             colour = ''.join([choice('0123456789ABCDEF') for x in range(6)])
             colour = int(colour, 16)
-            await self.bot.edit_role(ctx.message.server, roleObj, colour=discord.Colour(value=colour))
+            await self.bot.edit_role(ctx.message.guild, roleObj, colour=discord.Colour(value=colour))
             await asyncio.sleep(interval)
 
     @checks.admin_or_permissions(manage_roles=True)
-    @commands.command(pass_context = True, no_pm=True)
+    @commands.command(administrator=True)
     async def rainbow(self, ctx, *, role: discord.Role):
 
         while True:
             colour = ''.join([choice('0123456789ABCDEF') for x in range(6)])
             colour = int(colour, 16)
-            await self.bot.edit_role(ctx.message.server, role, colour=discord.Colour(value=colour))
+            await self.bot.edit_role(ctx.message.guild, role, colour=discord.Colour(value=colour))
             await asyncio.sleep(0.0)
 
 def setup(bot):
